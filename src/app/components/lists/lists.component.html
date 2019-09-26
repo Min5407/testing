@@ -1,0 +1,29 @@
+<div class="conatiner">
+   <h1>Lists</h1>
+   <table class="table">
+      <tr>
+         <th>
+            ID
+         </th>
+         <th>Name</th>
+         <th>Units</th>
+         <th>price</th>
+         <th>description</th>
+         <th>_id</th>
+      </tr>
+      <tr style="padding-top:20px;" *ngFor="let product of products">
+         <td>{{product.id}}</td>
+         <td>{{product.name}}</td>
+         <td>{{product.units}}</td>
+         <td>{{product.price}}</td>
+         <td>{{product.description}}</td>
+         <td>{{product._id}}</td>
+
+         <td><span [routerLink]="['/update',product._id]" class="btn btn-primary" routerLink="'/update',product.id"> <i
+                  class="fa fa-spinner"></i>
+               Edit</span> &nbsp; <span class="btn btn-primary" (click)="deleteproduct(product._id)"><i
+                  class="fa fa-trash"></i> Delete</span></td>
+
+      </tr>
+   </table>
+</div>
